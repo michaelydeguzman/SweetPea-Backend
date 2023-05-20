@@ -1,23 +1,8 @@
-using MenuService.Repositories.Persistence;
-using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-
-var connectionString = builder.Configuration.GetConnectionString("MenuServiceDb");
-
-// Add DbContext
-builder.Services.AddDbContext<MenuServiceDbContext>(options =>
-    options.UseSqlServer(connectionString,
-    sqlServerOptionsAction: sqlOptions =>
-    {
-        sqlOptions.EnableRetryOnFailure();
-    }));
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
