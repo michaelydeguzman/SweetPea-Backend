@@ -21,10 +21,11 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
-    <Folder Include="Repositories\Persistence\Migrations\" />
-    <Folder Include="Repositories\Persistence\Configuration\" />
-    <Folder Include="Repositories\Repository\" />
-    <Folder Include="Services\" />
+    <Folder Include="Data\Persistence\Configuration\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SweetPea.DataAccess\DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

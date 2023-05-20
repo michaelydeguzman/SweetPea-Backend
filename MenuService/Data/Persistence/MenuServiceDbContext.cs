@@ -27,7 +27,11 @@ namespace MenuService.Repositories.Persistence
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.
+
+            modelBuilder.Entity<Product>()
+            .HasOne<MenuGroup>(o => o.MenuGroup)
+            .WithMany(c => c.Products)
+            .HasForeignKey(o => o.MenuGroupId);
         }
     }
 }
