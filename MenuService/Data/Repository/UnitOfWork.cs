@@ -15,6 +15,7 @@ namespace MenuService.Data.Repository
         {
             _dbContext = dbContext;
             MenuGroupRepository = new MenuGroupRepository(_dbContext);
+            ProductRepository = new ProductRepository(_dbContext);
         }
 
         public async Task<int> Complete()

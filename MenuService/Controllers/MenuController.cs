@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MenuService.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/v1/[controller]")]
     public class MenuController : ControllerBase
     {
         private readonly ILogger<MenuController> _logger;
@@ -13,24 +13,25 @@ namespace MenuService.Controllers
 
         public MenuController(ILogger<MenuController> logger, IProductService productService)
         {
-            _logger = logger;
-            _productService = productService;
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
 
-        [HttpGet(Name = "GetMenuGroups")]
-        public async Task<List<MenuGroup>> GetMenuGroups()
+        [HttpGet]
+        [Route("menu_groups")]
+        public async Task<IActionResult> GetMenuGroups()
         {
             var result = new List<MenuGroup>();
             try
             {
                 var menuGroups = await _productService.GetMenuGroups();
                 result = menuGroups.ToList();
-                return result;
+                return Ok(result);
             }
             catch (Exception ex)
             {
                 _logger.LogError(ex, ex.Message, ex.StackTrace);
-                return result;
+                return BadRequest(ex);
             }
         }
     }

@@ -22,6 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Persistence\Configurations\" />
+    <Folder Include="Data\Persistence\Migrations\" />
+    <Folder Include="Data\Repositories\Interfaces\" />
     <Folder Include="Models\" />
   </ItemGroup>
 
