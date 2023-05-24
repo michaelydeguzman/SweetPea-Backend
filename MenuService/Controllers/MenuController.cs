@@ -1,3 +1,4 @@
+using Common.Models;
 using MenuService.Repositories.Entities;
 using MenuService.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -24,7 +25,7 @@ namespace MenuService.Controllers
             var result = new List<MenuGroup>();
             try
             {
-                var menuGroups = await _productService.GetMenuGroups();
+                var menuGroups = await _productService.GetMenuGroupsAsync();
                 result = menuGroups.ToList();
                 return Ok(result);
             }

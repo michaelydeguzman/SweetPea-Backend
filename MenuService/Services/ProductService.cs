@@ -13,7 +13,7 @@ namespace MenuService.Services
             _uow = uow;
         }
 
-        public async Task<IEnumerable<MenuGroup>> GetMenuGroups()
+        public async Task<IEnumerable<MenuGroup>> GetMenuGroupsAsync()
         {
             return await _uow.MenuGroupRepository.GetAllAsync();
         }
