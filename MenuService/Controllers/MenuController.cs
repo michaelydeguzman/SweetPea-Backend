@@ -10,9 +10,9 @@ namespace MenuService.Controllers
     public class MenuController : ControllerBase
     {
         private readonly ILogger<MenuController> _logger;
-        private readonly IProductService _productService;
+        private readonly IProductFactory _productService;
 
-        public MenuController(ILogger<MenuController> logger, IProductService productService)
+        public MenuController(ILogger<MenuController> logger, IProductFactory productService)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));

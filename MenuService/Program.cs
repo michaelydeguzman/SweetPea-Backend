@@ -36,10 +36,7 @@ builder.Services.AddTransient<IProductRepository, ProductRepository>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 // Services
-builder.Services.AddTransient<IProductService, ProductService>();
-
-//services.AddTransient<IServiceWrapper, ServiceWrapper>();
-//services.AddTransient<IAuthManager, AuthManager>();
+builder.Services.AddTransient<IProductFactory, ProductFactory>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

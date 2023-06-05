@@ -1,4 +1,6 @@
-
+APIGate/bin/*
+APIGate/obj/*
+SweetPeaAPI/.vs/*
 MenuService/bin/Debug/net6.0/appsettings.Development.json
 MenuService/bin/Debug/net6.0/appsettings.json
 MenuService/bin/Debug/net6.0/MenuService.deps.json
@@ -771,3 +773,4 @@ SweetPeaAPI/.vs/SweetPeaAPI/v17/TestStore/0/testlog.manifest
 SweetPeaAPI/obj/CartService.csproj.nuget.dgspec.json
 SweetPeaAPI/obj/CartService.csproj.nuget.g.props
 SweetPeaAPI/obj/CartService.csproj.nuget.g.targets
+APIGate/bin/Debug/net6.0/APIGate.dll

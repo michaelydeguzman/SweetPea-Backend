@@ -1,0 +1,20 @@
+{
+
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/v1/menu/menu_groups",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7134
+        }
+      ],
+      "UpstreamPathTemplate": "/menu_groups",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ],
+  "GlobalConfiguration": {
+
+  }
+}

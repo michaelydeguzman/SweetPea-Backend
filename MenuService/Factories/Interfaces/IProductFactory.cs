@@ -2,7 +2,7 @@
 
 namespace MenuService.Services.Interfaces
 {
-    public interface IProductService
+    public interface IProductFactory
     {
         Task<IEnumerable<MenuGroup>> GetMenuGroupsAsync();
     }

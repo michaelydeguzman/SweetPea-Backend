@@ -7,14 +7,14 @@ using Xunit;
 
 namespace MenuService.Test
 {
-    public class ProductServiceTest
+    public class ProductFactoryTest
     {
         private Mock<IUnitOfWork> _mockUnitOfWork;
         private Mock<IMenuGroupRepository> _mockGroupRepository;
         private Fixture _fixture;
 
 
-        public ProductServiceTest()
+        public ProductFactoryTest()
         {
             _fixture = new Fixture();
             // Ommit recursion
@@ -35,7 +35,7 @@ namespace MenuService.Test
             _mockUnitOfWork.Setup(muow => muow.MenuGroupRepository).Returns(_mockGroupRepository.Object);
 
             // Act
-            ProductService productService = new ProductService(_mockUnitOfWork.Object);
+            ProductFactory productService = new ProductFactory(_mockUnitOfWork.Object);
             IEnumerable<MenuGroup> response = await productService.GetMenuGroupsAsync();
 
             // Assert

@@ -4,11 +4,11 @@ using MenuService.Services.Interfaces;
 
 namespace MenuService.Services
 {
-    public class ProductService : IProductService
+    public class ProductFactory : IProductFactory
     {
         private IUnitOfWork _uow;
 
-        public ProductService(IUnitOfWork uow)
+        public ProductFactory(IUnitOfWork uow)
         {
             _uow = uow;
         }
